@@ -1,6 +1,15 @@
-/*
-* 
-* 
+/* Cameron Grondin
+*  Lab #2
+*
+*  variables used:
+*		gamesPlayed tracks games played
+*		die1 first roll
+*		die2 second roll
+*		total combined value of die1 and die2
+*		wins amount f wins
+*		losses amount of losses
+*		point the point roll
+*		result is the random number between 1 and 6
 */
 
 
