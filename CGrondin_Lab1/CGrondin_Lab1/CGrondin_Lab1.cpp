@@ -10,6 +10,9 @@
 *	dealer3 dealers third card
 *	anyKey for pausing the game
 *	gamesPlayed for counting games played
+*	decision for players deicion to hit of pass
+*	playerTotal stores the total of cards combined
+*	dealerTotal stores the total of cards combined
 * 
 */
 
@@ -19,23 +22,23 @@
 #include <conio.h>
 
 void goto_xy(int c, int r);
-int random();
+int card();
 
 int main() {
 	char anyKey;
 	int col, row;
 	col = 30;
 	row = 10;
-	int card1, card2, card3, dealer1, dealer2, dealer3, gamesPlayed, playerTotal, dealerTotal;
+	int card1, card2, card3, dealer1, dealer2, dealer3, gamesPlayed, playerTotal, dealerTotal, decision;
 	gamesPlayed = 0;
 	
 	while (gamesPlayed < 5) {
 		system("cls");
 		gamesPlayed++;
-		card1 = random();
-		card2 = random();
-		dealer1 = random();
-		dealer2 = random();
+		card1 = card();
+		card2 = card();
+		dealer1 = card();
+		dealer2 = card();
 
 		goto_xy(col, row - 2); std::cout << "Player" << std::endl;
 		goto_xy(col, row - 1); std::cout << "======" << std::endl;
@@ -53,7 +56,7 @@ int main() {
 		std::cin >> decision;
 
 		if (decision == 1) {
-			card3 = random();
+			card3 = card();
 			dealerTotal = dealer1 + dealer2;
 			goto_xy(col + 30, row + 1); std::cout << "                       " << std::endl;
 			goto_xy(col + 30, row+1); std::cout << "Dealer Second Card: " << dealer2 << std::endl;
@@ -70,6 +73,7 @@ int main() {
 				goto_xy(col, row); std::cout << "Dealer Wins ";
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
 
 			}
 			else if (playerTotal == 21) {
@@ -77,9 +81,11 @@ int main() {
 				goto_xy(col, row); std::cout << "Player Wins ";
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
+				
 			}
 			else if (dealerTotal <= 16) {
-				dealer3 = random();
+				dealer3 = card();
 				goto_xy(col + 30, row + 2); std::cout << "Dealer Third Card: " << card3 << std::endl;
 				playerTotal = card1 + card2 + card3;
 				goto_xy(col, row + 4); std::cout << "Player total: " << playerTotal << std::endl;
@@ -88,24 +94,29 @@ int main() {
 			
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
 			}
 			if (dealerTotal > 21) {
 				system("cls");
 				goto_xy(col, row); std::cout << "Player Wins ";
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
+				
 			}
 			else if (playerTotal > dealerTotal) {
 				system("cls");
 				goto_xy(col, row); std::cout << "Player Wins ";
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
 			}
 			else {
 				system("cls");
 				goto_xy(col, row); std::cout << "Dealer Wins ";
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
 			}
 		
 		}
@@ -116,7 +127,7 @@ int main() {
 			goto_xy(col, row + 4); std::cout << "Player total: " << playerTotal << std::endl;
 			goto_xy(col + 30, row + 4); std::cout << "Dealer total: " << dealerTotal << std::endl;
 			if (dealerTotal <= 16) {
-				dealer3 = random();
+				dealer3 = card();
 				goto_xy(col + 30, row + 2); std::cout << "Dealer Third Card: " << dealer3 << std::endl;
 				playerTotal = card1 + card2;
 				dealerTotal = dealer1 + dealer2 + dealer3;
@@ -131,18 +142,21 @@ int main() {
 				goto_xy(col, row); std::cout << "Player Wins ";
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
 			}
 			else if (playerTotal > dealerTotal) {
 				system("cls");
 				goto_xy(col, row); std::cout << "Player Wins ";
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
 			}
 			else {
 				system("cls");
 				goto_xy(col, row); std::cout << "Dealer Wins ";
 				goto_xy(col, row + 5); std::cout << "Press any key to continue...";
 				anyKey = _getch();
+				
 			}
 		}
 
@@ -161,7 +175,7 @@ void goto_xy(int c, int r) {
 	return;
 }
 
-int random() {
+int card() {
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<> dist(1, 10);
