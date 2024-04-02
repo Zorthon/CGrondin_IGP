@@ -1,0 +1,4 @@
+Bob Smith 01/23/2003 65000
+Betty Thompson 08/19/2001 52000
+Susan Adams 06/22/2005 58000
+David Karns 10/21/2004 51000
