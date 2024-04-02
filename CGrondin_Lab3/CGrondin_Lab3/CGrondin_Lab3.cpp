@@ -29,4 +29,5 @@ void main() {
 	std::cout << "The average is " << average << std::endl;
 
 	system("pause");
+	system("exit");
 }
