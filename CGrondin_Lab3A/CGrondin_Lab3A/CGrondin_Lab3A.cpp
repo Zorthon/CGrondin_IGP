@@ -6,19 +6,21 @@
 int main () {
 	std::cout << std::fixed << std::setprecision(2) << std::endl;
 
-	float largest, smallest, average, count, numbers;
+	float largest, smallest, average, count, numbers, total;
+	
 	
 	count = 0;
 	largest = 0;
-	smallest = 0;
+	smallest = 10000000;
+	numbers = 0;
+	total = 0;
 
 	std::ifstream fIn;
-	fIn.open("C:\\Users\\008021438\Desktop\\CGrondin_IGP\\CGrondin_Lab3A\\numbers.txt");
+	fIn.open("C:\\Users\\008021438\\Desktop\\numbers.txt");
 
 	while (!fIn.eof()) {
 		fIn >> numbers;
-		largest = numbers;
-		smallest = numbers;
+		total += numbers;
 		if (numbers > largest) {
 			largest = numbers;
 		}
@@ -28,6 +30,8 @@ int main () {
 		count++;
 	}
 	fIn.close();
-	std::cout << "Largest Number = " << largest << "\n" << "Smallest Number = " << smallest << std::endl;
+	average = total / count;
+	std::cout << "Largest Number = " << largest << "\n" << "Smallest Number = " << smallest << "\n" << "Average = " << average << "\n" << "Numbers Processed = " << count << std::endl;
 	system("pause");
+	return 0;
 }
