@@ -10,6 +10,7 @@
 *		losses amount of losses
 *		point the point roll
 *		result is the random number between 1 and 6
+*		prob holds the probability of winning
 */
 
 
@@ -63,6 +64,8 @@ int main() {
 	std::cout << "Wins: " << wins << std::endl;
 	std::cout << "Losses: " << losses << std::endl;
 	std::cout << "Probability to win: " << prob * 100 << "%" << std::endl;
+	
+	system("exit");
 }
 
 
