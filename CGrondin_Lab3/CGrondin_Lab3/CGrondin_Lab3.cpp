@@ -5,7 +5,7 @@
 
 void main() {
 
-	std::cout << std::fixed << std::setprecision << std::endl;
+	std::cout << std::fixed << std::setprecision(2) << std::endl;
 
 	std::string dob, fName, lName;
 	float average, salary, sum;
@@ -19,7 +19,7 @@ void main() {
 
 	while (!fIn.eof()) {
 		fIn >> fName >> lName >> dob >> salary;
-		std::cout << fName << lName << dob << salary;
+		std::cout << fName << " " << lName << " " << dob << " " << salary << std::endl;
 		sum += salary;
 		count++;
 	}
