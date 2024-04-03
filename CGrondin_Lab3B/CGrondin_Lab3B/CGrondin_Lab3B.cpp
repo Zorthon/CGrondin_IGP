@@ -8,7 +8,7 @@
 *		over amount of rooms over
 *		col print colum
 *		row print row
-*		fIn file in
+*		fIn file
 *		room room name
 *		coord coordinates
 *		coord.X x coordinate
