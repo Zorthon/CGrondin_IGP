@@ -1,3 +1,20 @@
+/*Cameron Grondin
+* Lab 3b
+* 
+* variables used:
+*		max amount the room can hold
+*		min amount of people in room
+*		amountover amont of people over limit
+*		over amount of rooms over
+*		col print colum
+*		row print row
+*		fIn file in
+*		room room name
+*		coord coordinates
+*		coord.X x coordinate
+*		coord.Y y coordinate
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -50,6 +67,7 @@ int main() {
 		}
 		count++;
 	}
+	fIn.close();
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << "Processed " << count << " records." << std::endl;
