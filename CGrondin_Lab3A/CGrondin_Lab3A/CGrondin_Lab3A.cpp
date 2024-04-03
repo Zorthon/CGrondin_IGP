@@ -1,3 +1,16 @@
+/*Cameron Grondin
+* Lab 3a
+* 
+* variables used:
+*		largest largest number
+*		smallest smallest number
+*		average average calculation
+*		count amount of numbers read
+*		numbers number read
+*		total all numbers read added up
+*		fIn file
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
