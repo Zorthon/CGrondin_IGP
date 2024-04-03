@@ -29,7 +29,7 @@ int main () {
 	total = 0;
 
 	std::ifstream fIn;
-	fIn.open("C:\\Users\\008021438\\Desktop\\numbers.txt");
+	fIn.open("C:\\Users\\008021438\\Desktop\\CGrondin_IGP\\CGrondin_Lab3A\\CGrondin_Lab3A\\numbers.txt");
 
 	while (!fIn.eof()) {
 		fIn >> numbers;
