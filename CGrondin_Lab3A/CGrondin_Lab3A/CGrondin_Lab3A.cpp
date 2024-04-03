@@ -4,7 +4,7 @@
 #include <iomanip>
 
 int main () {
-	std::cout << std::fixed << std::setprecision(2) << std::endl;
+	std::cout << std::fixed << std::setprecision(2);
 
 	float largest, smallest, average, count, numbers, total;
 	
