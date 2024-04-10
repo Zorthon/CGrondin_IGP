@@ -1,4 +1,16 @@
-
+/*Cameron Grondin
+* Lab 4B
+* 
+* Variables used:
+*	d1 used to get the first digit, thousands
+*	d2 used to get the second digit, hundreds
+*	d3 used to get the third digit, tens
+*	d4 used to get the fourth digit, ones
+*	number used to hold the number input from file
+*	newNumber used to hold the new 5 digit number
+*	sum used to hold the sum of d1+d2+d3+d4
+*	fin variable for file
+*/
 #include <iostream>
 #include <fstream>
 
