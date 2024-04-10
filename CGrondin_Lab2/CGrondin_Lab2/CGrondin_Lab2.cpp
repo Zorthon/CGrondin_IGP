@@ -18,9 +18,6 @@
 
 #include <iostream>
 #include <random>
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int roll();
 
@@ -75,12 +72,10 @@ int main() {
 
 
 int roll() {
-	/*std::random_device rd;
+	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<> dist(1, 6);
-	int result = dist(gen);*/
-	srand(time(NULL));
-	int result = rand() % 6 + 1;
-	
+	int result = dist(gen);
+
 	return result;
 }
