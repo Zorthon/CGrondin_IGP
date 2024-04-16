@@ -28,9 +28,19 @@ void main() {
 	}
 
 	for (int i = 0; i < count; i++) {
-		std::cout << letters[i] << std::endl;
+		int charCount = 1;
+		for (int n = i + 1; n < count; n++) {
+			if (letters[i] == letters[n]) {
+				charCount++;
+				letters[n] = '*';
+			}
+		}
+
+		if (letters[i] != '*') {
+			std::cout << letters[i] << " = " << charCount << std::endl;
+		}
 	}
 
 	system("pause");
-
+	system("exit");
 }
