@@ -1,3 +1,1 @@
-This is an example of multi line text file.
-I am using the getline function.
-I am hoping this works.
+Today is Tuesday
