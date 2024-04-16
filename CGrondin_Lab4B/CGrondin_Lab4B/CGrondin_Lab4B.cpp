@@ -20,7 +20,7 @@ void main() {
 	int d1, d2, d3, d4, number, newNumber, sum;
 
 	std::ifstream fin;
-	fin.open("C:\\Users\\008021438\\Desktop\\CGrondin_IGP\\CGrondin_Lab4B\\CGrondin_Lab4B\\Numbers.txt");
+	fin.open("C:\\Users\\008021438\\Desktop\\CGrondin_IGP\\CGrondin_Lab4B\\CGrondin_Lab4B\\Lab1B.txt");
 
 	sum = 0;
 
