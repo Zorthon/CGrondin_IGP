@@ -1,3 +1,17 @@
+/*Cameron Grondin Midterm
+* 
+* variables used:
+*	num is used for incrementing the data being put into the arrays
+*	highestScore contains the highestScore
+*	lowestScore contains the lowest score
+*	amount contains the amount of times the while loop ran
+*	test1 is an array for all grades for test 1
+*	test2 is an array for all grades for test 2
+*	highName contains the name with the highest score
+*	lowName contains the name with the lowest score
+*	names is an array for all the names for test 1 and 2
+*/
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
