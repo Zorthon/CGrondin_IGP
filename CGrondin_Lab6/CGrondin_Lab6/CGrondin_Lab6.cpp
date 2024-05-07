@@ -1,50 +1,65 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-
-void printArray(int arr[], int size);
-void bubbleSort(int arr[], int n);
+#include <string>
 
 int main() {
     
-    std::string lName[] = {" "}, FName[] = {" "};
-    int numbers[] = { 0 };
-    
-    int i, j, n;
-    for (i = 0; i < n - 1; i++)
+    std::string lName[50], fName[50], input;
+    int numbers[50] = { 0 }, max, min, guess, count;
 
-        // Last i elements are already 
-        // in place 
-        for (j = 0; j < n - i - 1; j++) {
-            if (lName[j] > lName[j + 1]) {
-                std::swap(lName[j], lName[j + 1]);
-                std::swap(FName[j], FName[j + 1]);
-                std::swap(numbers[j], numbers[j + 1]);
-                }
-                
-        }
-            
-}
+    std::ifstream fin;
+    fin.open("C:\\Users\\grond\\Desktop\\CGrondin_IGP\\CGrondin_Lab6\\Users-1.txt");
 
-void bubbleSort(int arr[], int n)
-{
-    int i, j;
-    for (i = 0; i < n - 1; i++)
-
-        // Last i elements are already 
-        // in place 
-        for (j = 0; j < n - i - 1; j++)
-            if (arr[j] > arr[j + 1])
-                std::swap(arr[j], arr[j + 1]);
-}
-
-// Function to print an array 
-void printArray(int arr[], int size)
-{
-    int i;
-    for (i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
+    count = 0;
+    while (!fin.eof()) {
+        fin >> fName[count] >> lName[count] >> numbers[count];
+        count++;
     }
-        
-    std::cout << std::endl;
+
+    fin.close();
+
+    for (int i = 0; i < count - 1; i++) {
+        for (int j = 0; j < count - i - 1; j++) {
+            if (lName[j] > lName[j + 1]) {
+                std::swap(fName[j], fName[j + 1]);
+                std::swap(lName[j], lName[j + 1]);
+                std::swap(numbers[j], numbers[j + 1]);
+            }
+        }
+    }
+
+    bool found = false;
+
+    while (found == false) {
+        std::cout << "Enter user's last name to search: ";
+        std::cin >> input;
+
+        min = 0;
+        max = count;
+        guess = (min + max) / 2;
+
+        while (input != lName[guess] && min < max) {
+            if (input < lName[guess]) {
+                max = guess - 1;
+            }
+            else {
+                min = guess + 1;
+            }
+            guess = (min + max) / 2;
+        }
+        std::cout << std::endl;
+        if (input == lName[guess]) {
+            std::cout << lName[guess] << " " << fName[guess] << " " << numbers[guess] << std::endl;
+            found = true;
+        }
+        else {
+            std::cout << "User " << input << " was not found." << std::endl;
+            system("pause");
+            system("cls");
+        }
+
+    }
+
+    return 0;
 }
