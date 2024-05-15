@@ -24,7 +24,7 @@ int roll();
 int main() {
 	float gamesPlayed, die1, die2, total, wins, losses, point;
 	float prob;
-	
+
 	gamesPlayed = 0;
 	point = 0;
 	wins = 0;
@@ -64,7 +64,7 @@ int main() {
 	std::cout << "Wins: " << wins << std::endl;
 	std::cout << "Losses: " << losses << std::endl;
 	std::cout << "Probability to win: " << prob * 100 << "%" << std::endl;
-	
+
 	system("exit");
 }
 
@@ -75,7 +75,7 @@ int roll() {
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<> dist(1, 6);
-	int result = dist(rd);
+	int result = dist(gen);
 
 	return result;
 }
