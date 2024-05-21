@@ -1,14 +1,21 @@
 #include <iostream>
+#include <vector>
 
 void seatMap();
+void menu(int& c);
 
 int main() {
-	
+	int choice;
+	menu(choice);
+	std::cout << "  ";
+	for (int i = 65; i <= 90; i++) {
+		std::cout << (char)i << " ";
+	}
+	std::cout << std::endl;
 	seatMap();
-	
 	return 0;
 }
-int menu(int& c) {
+void menu(int& c) {
 	std::cout << "1 - Clear seating" << std::endl;
 	std::cout << "2 - Display seats" << std::endl;
 	std::cout << "3 - Choose seats" << std::endl;
@@ -17,7 +24,7 @@ int menu(int& c) {
 }
 void seatMap() {
 	const int row = 16;
-	const int col = 26;
+	const int col = 27;
 	char seats[row][col];
 
 	for (int r = 1; r < row; r++) {
